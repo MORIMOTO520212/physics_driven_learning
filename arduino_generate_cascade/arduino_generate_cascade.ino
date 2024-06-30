@@ -8,5 +8,5 @@ void loop() {
   digitalWrite(7, clock);
   digitalWrite(13, clock);
   clock ^= 1;
-  delay(1000);
+  delay(30);
 }
