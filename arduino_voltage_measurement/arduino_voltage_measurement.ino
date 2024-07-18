@@ -29,7 +29,7 @@ void loop() {
   volts3 = ads.computeVolts(adc3);
 
 
-  Serial.print("IN1-:"); Serial.print(volts0); Serial.print(", IN1+:"); Serial.print(volts1); Serial.print(", OUT1:"); Serial.print(volts2);
+  Serial.print("Clamped:"); Serial.print(volts0); Serial.print(", Free:"); Serial.print(volts1);
   Serial.println("");
   delay(300);
 }
