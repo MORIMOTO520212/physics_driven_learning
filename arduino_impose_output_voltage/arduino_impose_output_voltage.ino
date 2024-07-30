@@ -26,10 +26,11 @@ void setup() {
 }
 
 void loop() {
-  clampedVolt(800, 3.75); // desired: 3.75v
-  clampedVolt(500, 2.50); // desired: 2.50v
-  clampedVolt(500, 1.00); // desired: 1.00v
-  clampedVolt(500, 2.25); // desired: 2.25v
+  // clampedVolt(800, 3.75); // desired: 3.75v
+  // clampedVolt(800, 2.50); // desired: 2.50v
+  // clampedVolt(800, 1.00); // desired: 1.00v
+  // clampedVolt(800, 2.25); // desired: 2.25v
+  clampedVolt(800, 2.25);
   delay(1000); // wait 1sec
 }
 
@@ -38,6 +39,7 @@ void clampedVolt(int steps, float desiredVolt) {
     int16_t adcCode = ads.readADC_SingleEnded(0);
     float freeVolt = ads.computeVolts(adcCode);
     float clampedVolt = computeClampedVolt(desiredVolt, freeVolt);
+    // float clampedVolt = 3.00;
     uint16_t clampedCode = computeAdcValue(clampedVolt);
     MCP.write(clampedCode, CH);
     Serial.print("desired: "); Serial.print(desiredVolt); Serial.print(", freeVolt:"); Serial.print(freeVolt); 
